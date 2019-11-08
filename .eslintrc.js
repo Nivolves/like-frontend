@@ -17,6 +17,8 @@ module.exports = {
     "react/prop-types": 0,
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/interface-name-prefix": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-non-null-assertion": 0,
     "react/jsx-uses-vars": 2,
     "react/destructuring-assignment": [ 2, 'always' ],
     "react/prefer-stateless-function": [ 2, { "ignorePureComponents": false } ],

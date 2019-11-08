@@ -1,8 +1,10 @@
 body {
   //colors
-  --black-color: #000;
+  --blue-color: #1890ff;
+  --grey-color: rgba(0,0,0,0.03);
+  --light-blue-color: #e6f7ff;
   --red-color: #FF0000;
-  --sidebar-color: #f0efed;
+  --white-color: #fff;
 
   //font-sizes
   --primary-font-size: 16px;
@@ -19,20 +21,4 @@ body {
 
 input, button {
   outline: none;
-}
-
-.fixed {
-  overflow: hidden;
-}
-
-#root {
-  position: fixed;
-  width: 100%;
-  min-height: 100vh;
-  transition: height 999999s;
-  @supports (-webkit-appearance:none) {
-    .os-android & {
-      min-height: calc(100vh - 56px);
-    }
-  }
 }

@@ -1,0 +1,24 @@
+header {
+  border-bottom: 1px solid var(--blue-color);
+}
+
+.header-container {
+  display: flex;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-link {
+  margin: auto 20px;
+}
+
+.logo-container {
+  height: 50px;
+  margin: auto 0;
+
+  & img {
+    height: 100%;
+    width: auto;
+  }
+}
