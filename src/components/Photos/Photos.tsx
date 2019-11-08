@@ -38,30 +38,32 @@ const Photos: React.FC<RouteComponentProps<url>> = ({
   );
 
   useEffect(() => {
-    if (query) {
+    if (query && path) {
       setQueryPhotos();
     }
-  }, [setQueryPhotos, query]);
+  }, [path, setQueryPhotos, query]);
 
   useEffect(() => {
     if (path) {
       setQuery(path);
     }
-    if (userId && !path) {
-      fetch(`${PHOTO_API}${API_KEY}`)
+    if (userId) {
+      if (!path) {
+        fetch(`${PHOTO_API}${API_KEY}`)
+          .then(res => res.json())
+          .then(({ hits }) => addPhotos(hits))
+          .catch(err => console.error(err));
+      }
+      fetch(`${GET_LIKES}/${userId}`)
         .then(res => res.json())
-        .then(({ hits }) => addPhotos(hits))
+        .then(result => addLikes(result))
         .catch(err => console.error(err));
     }
-    fetch(`${GET_LIKES}/${userId}`)
-      .then(res => res.json())
-      .then(result => addLikes(result))
-      .catch(err => console.error(err));
   }, [addLikes, addPhotos, path, setQuery, userId]);
 
   return (
     <div className="content">
-      <Search />
+      {!path && <Search />}
       {likes.length && photos.length ? (
         <>
           <div className="grid">
