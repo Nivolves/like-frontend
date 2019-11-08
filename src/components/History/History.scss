@@ -1,0 +1,30 @@
+.history-container {
+  width: 100%;
+  border: 1px solid var(--blue-color);
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 2px 10px;
+}
+
+.history-item {
+  display: block;
+  padding: 10px 20px;
+  margin-bottom: 0;
+
+  &:hover {
+    background-color: var(--grey-color);
+  }
+
+
+  &:first-child {
+    border-radius: 10px 10px 0  0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 10px 10px;
+  }
+
+  &-not-pair {
+    background-color: var(--light-blue-color);
+  }
+}
